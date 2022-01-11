@@ -5,24 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { MatList, MatListModule } from '@angular/material/list';
-import { PhoneListComponent } from './phone-list/phone-list.component';
-import { PhoneListItemComponent } from './phone-list-item/phone-list-item.component';
+import { MatListModule } from '@angular/material/list';
+import { PhoneListContainerModule } from './phone-list-container/phone-list-container.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PhoneListComponent,
-    PhoneListItemComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,
+    PhoneListContainerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
