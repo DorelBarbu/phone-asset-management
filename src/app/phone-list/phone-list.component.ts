@@ -22,4 +22,8 @@ export class PhoneListComponent  {
 
   @Input()
   dataSource: PhoneDataSource;
+
+  onClickRow(row: any) {
+    console.log('row clicked ', row);
+  }
 }
