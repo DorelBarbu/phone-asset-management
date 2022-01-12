@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PhoneListContainerComponent } from './phone-list-container.component';
+import { EditPhoneDialogComponent } from './edit-phone-dialog.component';
 
-describe('PhoneListContainerComponent', () => {
-  let component: PhoneListContainerComponent;
-  let fixture: ComponentFixture<PhoneListContainerComponent>;
+describe('EditPhoneDialogComponent', () => {
+  let component: EditPhoneDialogComponent;
+  let fixture: ComponentFixture<EditPhoneDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PhoneListContainerComponent ]
+      declarations: [ EditPhoneDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhoneListContainerComponent);
+    fixture = TestBed.createComponent(EditPhoneDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

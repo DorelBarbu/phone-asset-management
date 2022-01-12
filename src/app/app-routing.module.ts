@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { EditPhoneDialogComponent } from './edit-phone-dialog/edit-phone-dialog.component';
+import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
 import { PhoneListContainerComponent } from './phone-list-container/phone-list-container/phone-list-container.component';
 
 export const ABOUT_PATH = 'about';
@@ -15,6 +17,10 @@ const routes: Routes = [
     path: PHONES_PATH,
     component: PhoneListContainerComponent,
   },
+  {
+    path: 'edit-phone',
+    component: EditPhoneDialogComponent
+  }
 ];
 
 @NgModule({

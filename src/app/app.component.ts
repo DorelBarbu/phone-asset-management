@@ -6,7 +6,8 @@ import { RouteConfiguration } from './navigation-bar/navigation-bar.component';
 
 const routeConfiguration: RouteConfiguration = {
   [ABOUT_PATH]: 'About',
-  [PHONES_PATH]: 'Phones'
+  [PHONES_PATH]: 'Phones',
+  'edit-phone': 'Edit Phone',
 }
 
 

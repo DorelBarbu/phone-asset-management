@@ -1,14 +1,7 @@
-import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import {
-  AfterViewInit,
   Component,
   Input,
-  ViewChild,
 } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
-import phones from 'src/mocks/phones';
 import Phone from '../../types/phone';
 import { PhoneDataSource } from '../phone-list-container/phone-datasource';
 
@@ -23,7 +16,7 @@ export class PhoneListComponent  {
   @Input()
   dataSource: PhoneDataSource;
 
-  onClickRow(row: any) {
+  onClickRow(row: Phone) {
     console.log('row clicked ', row);
   }
 }

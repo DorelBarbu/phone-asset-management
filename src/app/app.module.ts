@@ -9,16 +9,32 @@ import { MatListModule } from '@angular/material/list';
 import { PhoneListContainerModule } from './phone-list-container/phone-list-container.module';
 import { AboutComponent } from './about/about.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { EditPhoneDialogComponent } from './edit-phone-dialog/edit-phone-dialog.component';
+import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, NavigationBarComponent],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    NavigationBarComponent,
+    EditPhoneDialogComponent,
+    EditPhoneFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,
-    PhoneListContainerModule
+    PhoneListContainerModule,
+    MatInputModule,
+    MatGridListModule,
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
