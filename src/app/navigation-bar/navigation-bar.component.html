@@ -1,0 +1,10 @@
+<!-- <p>navigation-bar works!</p> -->
+<nav style="text-align: center;">
+  <ul>
+    <li *ngFor="let route of routes | keyvalue">
+      <a routerLink="{{ route.key }}" routerLinkActive="active">{{
+        route.value
+      }}</a>
+    </li>
+  </ul>
+</nav>

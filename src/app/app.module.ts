@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { PhoneListContainerModule } from './phone-list-container/phone-list-container.module';
+import { AboutComponent } from './about/about.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AboutComponent, NavigationBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
