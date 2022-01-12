@@ -7,4 +7,10 @@ export class PhoneService {
   async getPhones(pageNumber: number, pageSize: number): Promise<Phone[]> {
     return phones.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
   }
+
+  async updatePhone(phone: Phone) {
+    return {
+      'success': true
+    }
+  }
 }

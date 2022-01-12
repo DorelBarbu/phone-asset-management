@@ -1,2 +1,5 @@
 <!-- <p>phone-list-container works!</p> -->
-<app-phone-list [dataSource]="dataSource"></app-phone-list>
+<app-phone-list
+  [dataSource]="dataSource"
+  (rowClickedEvent)="handleRowClickEvent($event)"
+></app-phone-list>

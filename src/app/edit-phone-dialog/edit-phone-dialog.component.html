@@ -1,1 +1,21 @@
-<app-edit-phone-form [phone]="phone"></app-edit-phone-form>
+<h1 mat-dialog-title>Edit phone</h1>
+<div mat-dialog-content>
+  <app-edit-phone-form [phone]="phone"></app-edit-phone-form>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="handleSaveButtonClick()"
+    class="save-button"
+  >
+    Save
+  </button>
+  <button
+    mat-raised-button
+    (click)="handleCancelButtonClick()"
+    class="cancel-button"
+  >
+    Cancel
+  </button>
+</div>

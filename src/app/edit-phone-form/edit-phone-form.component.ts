@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import Phone from 'src/types/phone';
 
 @Component({
@@ -10,7 +10,14 @@ export class EditPhoneFormComponent implements OnInit {
   @Input()
   phone: Phone;
 
+  @Output()
+  savePhoneEvent = new EventEmitter<Phone>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleClickSaveButton() {
+    this.savePhoneEvent.emit(this.phone);
+  }
 }

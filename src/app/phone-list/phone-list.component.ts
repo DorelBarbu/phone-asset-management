@@ -1,7 +1,4 @@
-import {
-  Component,
-  Input,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import Phone from '../../types/phone';
 import { PhoneDataSource } from '../phone-list-container/phone-datasource';
 
@@ -10,13 +7,15 @@ import { PhoneDataSource } from '../phone-list-container/phone-datasource';
   templateUrl: './phone-list.component.html',
   styleUrls: ['./phone-list.component.css'],
 })
-export class PhoneListComponent  {
+export class PhoneListComponent {
   columns: string[] = ['id', 'type', 'serial', 'color'];
 
   @Input()
   dataSource: PhoneDataSource;
 
-  onClickRow(row: Phone) {
-    console.log('row clicked ', row);
+  @Output() rowClickedEvent = new EventEmitter<Phone>();
+
+  onClickRow(phone: Phone) {
+    this.rowClickedEvent.emit(phone);
   }
 }

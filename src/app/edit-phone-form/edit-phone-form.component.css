@@ -3,18 +3,3 @@
   flex-direction: column;
 }
 
-.button-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.save-button {
-  margin-right: 10px;
-}
-
-.cancel-button {
-  margin-left: 10px;
-}
