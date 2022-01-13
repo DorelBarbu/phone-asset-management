@@ -12,6 +12,7 @@ import { EditPhoneModule } from './edit-phone/edit-phone.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { PhoneService } from './services/phone.service';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 @NgModule({
   declarations: [AppComponent, AboutComponent, NavigationBarComponent],
   imports: [

@@ -1,18 +1,22 @@
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import phones from "src/mocks/phones";
 import Phone from "src/types/phone.type";
+import { PhoneApiService } from "./phone-api.service";
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhoneService {
-  async getPhones(pageNumber: number, pageSize: number): Promise<Phone[]> {
-    return phones.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+  constructor(private phoneApi: PhoneApiService) {
+
   }
 
-  async updatePhone(phone: Phone) {
-    return {
-      'success': true
-    }
+  getPhones(pageNumber: number, pageSize: number): Observable<Phone[]> {
+    return this.phoneApi.getPhones();
+  }
+
+  updatePhone(phone: Phone): Observable<Phone> {
+    return this.phoneApi.updatePhone(phone);
   }
 }

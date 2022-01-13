@@ -1,5 +1,17 @@
-<!-- <p>phone-list-container works!</p> -->
-<app-phone-list
-  [dataSource]="dataSource"
-  (rowClickedEvent)="handleRowClickEvent($event)"
-></app-phone-list>
+<div *ngIf="phones$ | async as phones; else loading">
+  <app-phone-list
+    *ngIf="phones.length > 0"
+    (rowClickedEvent)="handleRowClickEvent($event)"
+    [phones]="phones"
+  ></app-phone-list>
+</div>
+
+<ng-template #loading>
+  <div class="container">
+    <mat-spinner diameter="80"></mat-spinner>
+  </div>
+</ng-template>
+
+<div *ngIf="errorMessage$ | async as errorMessage">
+  <app-error-message [message]='errorMessage'></app-error-message>
+</div>

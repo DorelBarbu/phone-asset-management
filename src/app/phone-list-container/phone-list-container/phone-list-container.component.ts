@@ -1,34 +1,76 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable, of, Subject } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { EditPhoneDialogComponent } from 'src/app/edit-phone-dialog/edit-phone-dialog.component';
 import { PhoneService } from 'src/app/services/phone.service';
-import phones from 'src/mocks/phones';
 import Phone from '../../../types/phone.type';
-import { PhoneDataSource } from '../phone-datasource';
 @Component({
   selector: 'app-phone-list-container',
   templateUrl: './phone-list-container.component.html',
   styleUrls: ['./phone-list-container.component.css'],
 })
 export class PhoneListContainerComponent {
-  dataSource: PhoneDataSource = new PhoneDataSource();
-  editPhoneDialogRef: MatDialogRef<EditPhoneDialogComponent, any>
+  editPhoneDialogRef: MatDialogRef<EditPhoneDialogComponent, any>;
 
-  constructor(private phoneService: PhoneService, public dialog: MatDialog) {}
+  phones$: Observable<Phone[]>;
+  errorMessage$: Subject<string> = new Subject<string>();
+
+  constructor(
+    private phoneService: PhoneService,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {
+    this.getPhones();
+  }
+
+  private getPhones() {
+    this.errorMessage$.next('');
+
+    this.phones$ = this.phoneService.getPhones(1, 1).pipe(
+      tap((users) => {
+        console.log('users arrived', users);
+      }),
+      catchError((error) => {
+        console.error(error.message);
+        this.errorMessage$.next(error.message);
+        return of([]);
+      })
+    );
+  }
+
+  private savePhone(phone: Phone) {
+    this.editPhoneDialogRef.componentInstance.isLoading = true;
+    console.log('data arrived in parent component ', phone);
+
+    const updatePhoneResult$ = this.phoneService.updatePhone(phone);
+    updatePhoneResult$.subscribe(
+      () => {
+        this.closeDialog();
+        this.getPhones();
+      },
+      (err) => {
+        this.editPhoneDialogRef.componentInstance.isLoading = false;
+        this.snackBar.open('Error updating phone', 'Close', {
+          duration: 1000,
+        });
+      }
+    );
+  }
 
   openDialog(phone: Phone): void {
     this.editPhoneDialogRef = this.dialog.open(EditPhoneDialogComponent, {
       data: { ...phone },
     });
 
-    this.editPhoneDialogRef.afterClosed().subscribe(result => {
+    this.editPhoneDialogRef.afterClosed().subscribe((result) => {
       console.log('This dialog was closed');
-    })
+    });
 
-    this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.subscribe(data => {
-      this.editPhoneDialogRef.componentInstance.isLoading = true;
-      console.log('data arrived in parent component ', data);
-    })
+    this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.subscribe(
+      this.savePhone.bind(this)
+    );
   }
 
   closeDialog() {

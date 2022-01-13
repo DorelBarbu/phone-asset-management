@@ -10,12 +10,12 @@ import { PhoneDataSource } from '../phone-list-container/phone-datasource';
 export class PhoneListComponent {
   columns: string[] = ['id', 'type', 'serial', 'color'];
 
-  @Input()
-  dataSource: PhoneDataSource;
+  @Input() phones: Phone[] | null = [];
 
   @Output() rowClickedEvent = new EventEmitter<Phone>();
 
   onClickRow(phone: Phone) {
+    // console.log('row clicked', phone);
     this.rowClickedEvent.emit(phone);
   }
 }
