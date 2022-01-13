@@ -9,3 +9,9 @@
 .text-align-center {
   text-align: center;
 }
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

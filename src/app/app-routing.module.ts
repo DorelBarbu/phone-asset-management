@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { EditPhoneDialogComponent } from './edit-phone-dialog/edit-phone-dialog.component';
-import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
+import { LoginPageComponent } from './auth/login-page/login-page.component';
 import { PhoneListContainerComponent } from './phone-list-container/phone-list-container/phone-list-container.component';
 
 export const ABOUT_PATH = 'about';
 export const PHONES_PATH = 'phones';
+export const LOGIN_PATH = 'login';
 
 const routes: Routes = [
   {
@@ -18,9 +18,9 @@ const routes: Routes = [
     component: PhoneListContainerComponent,
   },
   {
-    path: 'edit-phone',
-    component: EditPhoneDialogComponent
-  }
+    path: LOGIN_PATH,
+    component: LoginPageComponent,
+  },
 ];
 
 @NgModule({
