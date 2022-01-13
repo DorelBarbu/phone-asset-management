@@ -29,4 +29,14 @@ export class PhoneApiService {
       })
     );
   }
+
+  public createPhone(phone: Phone): Observable<Phone> {
+    return of(phone).pipe(
+      delay(600),
+      switchMap(() => {
+        // return throwError(new Error('Error loading phones'));
+        return of(phone);
+      })
+    );
+  }
 }

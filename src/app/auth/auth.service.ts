@@ -36,4 +36,8 @@ export class AuthService {
   public setToken(token: string, expiresAt: string) {
     this.storage.setToken(token, expiresAt);
   }
+
+  public isAuthenticated(): boolean {
+    return !!this.getToken();
+  }
 }

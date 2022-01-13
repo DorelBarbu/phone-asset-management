@@ -1,0 +1,37 @@
+<mat-card class="login-card" style="max-width: 25vw; margin: auto">
+  <form (submit)="onSave()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Type</mat-label>
+      <input matInput required [readonly]="isLoading" [formControl]="type" />
+      <mat-error *ngIf="false">test</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Serial</mat-label>
+      <input matInput required [readonly]="isLoading" [formControl]="serial" />
+      <mat-error *ngIf="false">test error</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Color</mat-label>
+      <input matInput required [readonly]="isLoading" [formControl]="color" />
+      <mat-error *ngIf="false">test error</mat-error>
+    </mat-form-field>
+    
+    <div class="container">
+      <mat-spinner diameter="50" *ngIf="isLoading"></mat-spinner>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        *ngIf="!isLoading"
+      >
+        Create phone
+      </button>
+    </div>
+  </form>
+  <app-file-upload
+    whitelist="application/json"
+    (onReadFile)="onReadFile($event)"
+  ></app-file-upload>
+</mat-card>

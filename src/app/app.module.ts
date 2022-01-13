@@ -11,21 +11,35 @@ import { EditPhoneModule } from './edit-phone/edit-phone.module';
 // Material components modules
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginPageComponent } from './auth/login-page/login-page.component';
 import { AuthModule } from './auth/auth.module';
-import { GuestViewComponent } from './guest-view/guest-view.component';
+import { HomeViewComponent } from './home-view/home-view.component';
+import { CreatePhoneComponent } from './create-phone/create-phone.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 @NgModule({
-  declarations: [AppComponent, AboutComponent, NavigationBarComponent, GuestViewComponent],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    NavigationBarComponent,
+    HomeViewComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
     PhoneListContainerModule,
     EditPhoneModule,
     AuthModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -8,7 +8,13 @@ import Phone from 'src/types/phone.type';
 })
 export class EditPhoneFormComponent {
   @Input()
-  phone: Phone;
+  phone: Phone = {
+    id: 0,
+    type: '',
+    color: '',
+    metadata: '',
+    serial: '',
+  };
   
   constructor() {}
 }

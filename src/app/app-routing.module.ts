@@ -1,7 +1,11 @@
+import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import IsAuthenticated from './auth/is-authenticated.guard';
 import { LoginPageComponent } from './auth/login-page/login-page.component';
+import { CreatePhoneComponent } from './create-phone/create-phone.component';
+import { HomeViewComponent } from './home-view/home-view.component';
 import { PhoneListContainerComponent } from './phone-list-container/phone-list-container/phone-list-container.component';
 
 export const ABOUT_PATH = 'about';
@@ -10,15 +14,22 @@ export const LOGIN_PATH = 'login';
 
 const routes: Routes = [
   {
-    path: ABOUT_PATH,
-    component: AboutComponent,
+    path: '',
+    component: HomeViewComponent,
+    canActivate: [IsAuthenticated],
+    children: [
+      {
+        path: 'phones',
+        component: PhoneListContainerComponent,
+      },
+      {
+        path: 'create',
+        component: CreatePhoneComponent,
+      },
+    ],
   },
   {
-    path: PHONES_PATH,
-    component: PhoneListContainerComponent,
-  },
-  {
-    path: LOGIN_PATH,
+    path: 'login',
     component: LoginPageComponent,
   },
 ];
@@ -26,5 +37,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [IsAuthenticated],
 })
 export class AppRoutingModule {}

@@ -6,13 +6,13 @@ import { EditPhoneFormComponent } from '../edit-phone-form/edit-phone-form.compo
 
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { AuthModule } from '../auth/auth.module';
+import { CreatePhoneComponent } from '../create-phone/create-phone.component';
+import { FileUploadComponent } from '../file-upload/file-upload.component';
 
 
 
@@ -20,6 +20,8 @@ import { AuthModule } from '../auth/auth.module';
   declarations: [
     EditPhoneDialogComponent,
     EditPhoneFormComponent,
+    CreatePhoneComponent,
+    FileUploadComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,8 @@ import { AuthModule } from '../auth/auth.module';
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    ReactiveFormsModule
   ]
 })
 export class EditPhoneModule { }

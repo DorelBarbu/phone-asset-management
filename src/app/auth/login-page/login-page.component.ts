@@ -57,6 +57,7 @@ export class LoginPageComponent {
         })
       )
       .subscribe(() => {
+        console.log('here');
         this.isLoading = false;
         this.router.navigate(['/phones']);
       });
