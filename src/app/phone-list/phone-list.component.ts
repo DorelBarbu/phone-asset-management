@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import Phone from '../../types/phone';
+import Phone from '../../types/phone.type';
 import { PhoneDataSource } from '../phone-list-container/phone-datasource';
 
 @Component({

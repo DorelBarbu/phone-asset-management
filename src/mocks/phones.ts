@@ -1,4 +1,4 @@
-import Phone from '../types/phone';
+import Phone from '../types/phone.type';
 
 const phones: Phone[] = [
   {

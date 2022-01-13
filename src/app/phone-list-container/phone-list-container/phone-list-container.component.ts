@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EditPhoneDialogComponent } from 'src/app/edit-phone-dialog/edit-phone-dialog.component';
 import { PhoneService } from 'src/app/services/phone.service';
 import phones from 'src/mocks/phones';
-import Phone from '../../../types/phone';
+import Phone from '../../../types/phone.type';
 import { PhoneDataSource } from '../phone-datasource';
 @Component({
   selector: 'app-phone-list-container',
@@ -12,13 +12,27 @@ import { PhoneDataSource } from '../phone-datasource';
 })
 export class PhoneListContainerComponent {
   dataSource: PhoneDataSource = new PhoneDataSource();
+  editPhoneDialogRef: MatDialogRef<EditPhoneDialogComponent, any>
 
   constructor(private phoneService: PhoneService, public dialog: MatDialog) {}
 
   openDialog(phone: Phone): void {
-    const dialogRef = this.dialog.open(EditPhoneDialogComponent, {
+    this.editPhoneDialogRef = this.dialog.open(EditPhoneDialogComponent, {
       data: { ...phone },
     });
+
+    this.editPhoneDialogRef.afterClosed().subscribe(result => {
+      console.log('This dialog was closed');
+    })
+
+    this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.subscribe(data => {
+      console.log('data arrived in parent component ', phone);
+    })
+  }
+
+  closeDialog() {
+    this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.unsubscribe();
+    this.editPhoneDialogRef.close();
   }
 
   handleRowClickEvent(phone: Phone) {

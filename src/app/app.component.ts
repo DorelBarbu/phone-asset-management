@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import phones from 'src/mocks/phones';
-import Phone from 'src/types/phone';
+import Phone from 'src/types/phone.type';
 import { ABOUT_PATH, PHONES_PATH } from './app-routing.module';
 import { RouteConfiguration } from './navigation-bar/navigation-bar.component';
 

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Phone from 'src/types/phone';
+import Phone from 'src/types/phone.type';
 
 @Component({
   selector: 'app-edit-phone-form',

@@ -1,6 +1,13 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import Phone from 'src/types/phone';
+import Phone from 'src/types/phone.type';
 
 @Component({
   selector: 'app-edit-phone-dialog',
@@ -13,16 +20,14 @@ export class EditPhoneDialogComponent {
     @Inject(MAT_DIALOG_DATA) public phone: Phone
   ) {}
 
-  handleSaveButtonClick() {
-    console.log('parent savePhone');
-    console.log(this.phone);
+  onSaveEventEmitter: EventEmitter<Phone> = new EventEmitter<Phone>();
+
+  onSaveClick() {
+    console.log('save phone clicked');
+    this.onSaveEventEmitter.emit(this.phone);
   }
 
-  handleCancelButtonClick() {
-    console.log('cancel button clicked');
-  }
-
-  onNoClick(): void {
+  onCancelClick(): void {
     this.dialogRef.close();
   }
 }
