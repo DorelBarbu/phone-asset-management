@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 import { AuthenticatedUser } from 'src/types/user.type';
 import { AuthApiService } from './auth-api.service';
 import { JwtStorage } from './types/JwtStorage';
@@ -17,6 +18,22 @@ export class AuthService {
     username: string,
     password: string
   ): Observable<AuthenticatedUser> {
-    return this.apiService.login(username, password);
+    const subject = new ReplaySubject<AuthenticatedUser>();
+
+    this.apiService.login(username, password).subscribe(subject);
+
+    subject.subscribe((authenticatedUser) => {
+      this.setToken(authenticatedUser.token, authenticatedUser.expiresAt);
+    });
+
+    return subject.pipe(shareReplay());
+  }
+
+  public getToken(): string {
+    return this.storage.getToken();
+  }
+
+  public setToken(token: string, expiresAt: string) {
+    this.storage.setToken(token, expiresAt);
   }
 }

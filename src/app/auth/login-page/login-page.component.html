@@ -1,20 +1,41 @@
-<p>login-page works!</p>
+<mat-card class="login-card">
+  <mat-card-title class="text-align-center card-title mb-small"
+    >Login</mat-card-title
+  >
 
-<mat-card>
-  <div class="vertical-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
-      <input matInput />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput />
-    </mat-form-field>
-  </div>
-
-  <div>
-    <button mat-raised-button color="primary" class="save-button">Save</button>
-    <button mat-raised-button class="cancel-button">Cancel</button>
+  <div class="vertical-container mb-small">
+    <form (submit)="onSubmit()" [formGroup]="loginForm">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput [formControl]="email" required [readonly]="isLoading" />
+        <mat-error *ngIf="email.invalid">{{
+          getEmailErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [formControl]="password"
+          required
+          type="password"
+          [readonly]="isLoading"
+        />
+        <mat-error *ngIf="password.invalid">{{
+          getPasswordErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <div class="container">
+        <mat-spinner diameter="50" *ngIf="isLoading"></mat-spinner>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          *ngIf="!isLoading"
+        >
+          Login
+        </button>
+      </div>
+    </form>
   </div>
 </mat-card>
