@@ -5,9 +5,11 @@ import {
   OnInit,
   Output,
   EventEmitter,
+  ViewChild,
 } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import Phone from 'src/types/phone.type';
+import { EditPhoneFormComponent } from '../edit-phone-form/edit-phone-form.component';
 
 @Component({
   selector: 'app-edit-phone-dialog',
@@ -20,11 +22,14 @@ export class EditPhoneDialogComponent {
     @Inject(MAT_DIALOG_DATA) public phone: Phone
   ) {}
 
+  @ViewChild(EditPhoneFormComponent) editPhoneForm: EditPhoneFormComponent;
+
   onSaveEventEmitter: EventEmitter<Phone> = new EventEmitter<Phone>();
 
+  isLoading: boolean = false;
+
   onSaveClick() {
-    console.log('save phone clicked');
-    this.onSaveEventEmitter.emit(this.phone);
+    this.onSaveEventEmitter.emit(this.editPhoneForm.phone);
   }
 
   onCancelClick(): void {

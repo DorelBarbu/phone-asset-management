@@ -3,9 +3,3 @@
   flex-direction: column;
   position: relative;
 }
-
-.align-center-horizontally {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}

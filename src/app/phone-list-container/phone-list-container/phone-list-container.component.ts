@@ -26,7 +26,8 @@ export class PhoneListContainerComponent {
     })
 
     this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.subscribe(data => {
-      console.log('data arrived in parent component ', phone);
+      this.editPhoneDialogRef.componentInstance.isLoading = true;
+      console.log('data arrived in parent component ', data);
     })
   }
 

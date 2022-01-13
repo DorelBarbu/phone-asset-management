@@ -21,9 +21,6 @@ import { PhoneService } from '../services/phone.service';
   ],
   exports: [
     PhoneListContainerComponent
-  ],
-  providers: [
-    PhoneService,
   ]
 })
 export class PhoneListContainerModule { }

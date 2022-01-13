@@ -11,6 +11,7 @@ import { EditPhoneModule } from './edit-phone/edit-phone.module';
 // Material components modules
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { PhoneService } from './services/phone.service';
 @NgModule({
   declarations: [AppComponent, AboutComponent, NavigationBarComponent],
   imports: [
@@ -22,7 +23,6 @@ import { MatListModule } from '@angular/material/list';
     PhoneListContainerModule,
     EditPhoneModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
