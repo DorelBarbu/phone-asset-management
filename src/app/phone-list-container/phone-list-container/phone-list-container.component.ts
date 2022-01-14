@@ -32,9 +32,9 @@ export class PhoneListContainerComponent {
       tap((users) => {
         console.log('users arrived', users);
       }),
-      catchError((error) => {
-        console.error(error.message);
-        this.errorMessage$.next(error.message);
+      catchError((err) => {
+        console.error(err.error.message);
+        this.errorMessage$.next(err.error.message);
         return of([]);
       })
     );
