@@ -80,21 +80,27 @@ export class RegisterUserComponent {
 
   private register() {
     this.isLoading = true;
-    this.authService
-      .register(this.email.value, this.password.value)
-      .pipe(
-        catchError((err) => {
-          this.snackBar.open(err.message, 'Close', {
-            duration: 1000,
-          });
-          return of(null);
-        })
-      )
-      .subscribe(() => {
-        console.log('here');
+    this.authService.register(this.email.value, this.password.value).subscribe(
+      () => {
+        this.router.navigate(['/login']);
+        this.snackBar.open(
+          'Congratulations, you can now log in with your username and password',
+          'Close',
+          {
+            duration: 3000,
+          }
+        );
+      },
+      (err) => {
+        this.snackBar.open(err.error.message, 'Close', {
+          duration: 1000,
+        });
         this.isLoading = false;
-        this.router.navigate(['/phones']);
-      });
+      },
+      () => {
+        this.isLoading = false;
+      }
+    );
   }
   onSubmit() {
     if (this.loginForm.valid) {

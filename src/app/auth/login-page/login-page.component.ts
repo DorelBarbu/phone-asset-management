@@ -48,19 +48,21 @@ export class LoginPageComponent {
     this.isLoading = true;
     this.authService
       .login(this.email.value, this.password.value)
-      .pipe(
-        catchError((err) => {
-          this.snackBar.open(err.message, 'Close', {
+      .pipe()
+      .subscribe(
+        () => {
+          this.router.navigate(['/phones']);
+        },
+        (err) => {
+          this.snackBar.open(err.error.message, 'Close', {
             duration: 1000,
           });
-          return of(null);
-        })
-      )
-      .subscribe(() => {
-        console.log('here');
-        this.isLoading = false;
-        this.router.navigate(['/phones']);
-      });
+          this.isLoading = false;
+        },
+        () => {
+          this.isLoading = false;
+        }
+      );
   }
 
   onRegisterClick() {

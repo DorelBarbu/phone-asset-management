@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,13 +14,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { AuthModule } from './auth/auth.module';
 import { HomeViewComponent } from './home-view/home-view.component';
-import { CreatePhoneComponent } from './create-phone/create-phone.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +29,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,

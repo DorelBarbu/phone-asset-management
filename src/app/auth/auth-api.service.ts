@@ -1,42 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, switchMap } from 'rxjs/operators';
 import { AuthenticatedUser } from 'src/types/user.type';
+import { SERVER } from '../constants';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthApiService {
-  public login(
-    username: string,
-    password: string
-  ): Observable<AuthenticatedUser> {
-    return of({
-      username: username,
-      token: '123',
-      expiresAt: '13-01-2022',
-    }).pipe(
-      delay(1000),
-      switchMap((value) => {
-        // return throwError(new Error('Invalid credentials'));
-        return of(value);
-      })
-    );
+  constructor(private http: HttpClient) {}
+
+  public login(email: string, password: string): Observable<AuthenticatedUser> {
+    return this.http.post<AuthenticatedUser>(`${SERVER}/users/signin`, {
+      email,
+      password,
+    });
   }
 
   public register(
-    username: string,
+    email: string,
     password: string
   ): Observable<AuthenticatedUser> {
-    return of({
-      username: username,
-      token: '123',
-      expiresAt: '13-01-2022',
-    }).pipe(
-      delay(1000),
-      switchMap((value) => {
-        // return throwError(new Error('Invalid credentials'));
-        return of(value);
-      })
-    );
+    return this.http.post<AuthenticatedUser>(`${SERVER}/users/signup`, {
+      email,
+      password,
+    });
   }
 }
