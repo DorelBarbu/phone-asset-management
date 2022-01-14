@@ -28,7 +28,7 @@ export class PhoneListContainerComponent {
   private getPhones() {
     this.errorMessage$.next('');
 
-    this.phones$ = this.phoneService.getPhones(1, 1).pipe(
+    this.phones$ = this.phoneService.getPhones().pipe(
       tap((users) => {
         console.log('users arrived', users);
       }),

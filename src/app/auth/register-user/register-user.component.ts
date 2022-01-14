@@ -32,12 +32,9 @@ function passwordNotMatch(): ValidatorFn {
   styleUrls: ['./register-user.component.css', '../../../style.css'],
 })
 export class RegisterUserComponent {
-  email = new FormControl('test@test.com', [
-    Validators.required,
-    Validators.email,
-  ]);
-  password = new FormControl('test', [Validators.required]);
-  repeatPassword = new FormControl('test2', [
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
+  repeatPassword = new FormControl('', [
     Validators.required,
     passwordNotMatch(),
   ]);

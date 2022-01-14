@@ -15,9 +15,9 @@ import { PhoneService } from '../services/phone.service';
 export class CreatePhoneComponent implements OnInit {
   public isLoading: boolean = false;
 
-  type = new FormControl('test', [Validators.required]);
-  color = new FormControl('test', [Validators.required]);
-  serial = new FormControl('test', [Validators.required]);
+  type = new FormControl('', [Validators.required]);
+  color = new FormControl('', [Validators.required]);
+  serial = new FormControl('', [Validators.required]);
 
   fileBase64: string;
 

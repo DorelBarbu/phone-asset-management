@@ -11,7 +11,7 @@ import { PhoneApiService } from './phone-api.service';
 export class PhoneService {
   constructor(private phoneApi: PhoneApiService) {}
 
-  getPhones(pageNumber: number, pageSize: number): Observable<Phone[]> {
+  getPhones(): Observable<Phone[]> {
     return this.phoneApi.getPhones();
   }
 
@@ -20,12 +20,6 @@ export class PhoneService {
   }
 
   createPhone(phone: Phone): Observable<Phone> {
-    return this.phoneApi.createPhone(phone).pipe(
-      delay(1000),
-      switchMap((result) => {
-        return throwError(new Error('Error saving phone to the database'));
-        return of(result);
-      })
-    );
+    return this.phoneApi.createPhone(phone);
   }
 }

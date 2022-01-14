@@ -12,11 +12,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login-page.component.css', '../../../style.css'],
 })
 export class LoginPageComponent {
-  email = new FormControl('test@test.com', [
+  email = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  password = new FormControl('test', [Validators.required]);
+  password = new FormControl('', [Validators.required]);
 
   isLoading: boolean = false;
 

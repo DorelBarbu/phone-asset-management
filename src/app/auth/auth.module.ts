@@ -11,6 +11,8 @@ import { JwtStorageService } from './jwt-storage.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [LoginPageComponent, RegisterUserComponent],
@@ -30,7 +32,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     {
       provide: JwtStorage,
       useExisting: JwtStorageService,
-    },
+    }
   ],
 })
 export class AuthModule {}
