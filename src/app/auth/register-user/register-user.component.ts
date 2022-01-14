@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -17,7 +17,6 @@ function passwordNotMatch(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const password = control.parent?.value.password;
     const repeatPassword = control.value;
-    console.log(password, repeatPassword);
     if (password == repeatPassword) {
       return null;
     }
@@ -32,7 +31,7 @@ function passwordNotMatch(): ValidatorFn {
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.css', '../../../style.css'],
 })
-export class RegisterUserComponent implements OnInit {
+export class RegisterUserComponent {
   email = new FormControl('test@test.com', [
     Validators.required,
     Validators.email,
@@ -79,33 +78,27 @@ export class RegisterUserComponent implements OnInit {
     return 'Password is required';
   }
 
-  private login() {
-    console.log(this.authService.getToken());
+  private register() {
     this.isLoading = true;
-    // this.authService
-    //   .login(this.email.value, this.password.value)
-    //   .pipe(
-    //     catchError((err) => {
-    //       this.snackBar.open(err.message, 'Close', {
-    //         duration: 1000,
-    //       });
-    //       return of(null);
-    //     })
-    //   )
-    //   .subscribe(() => {
-    //     console.log('here');
-    //     this.isLoading = false;
-    //     this.router.navigate(['/phones']);
-    //   });
+    this.authService
+      .register(this.email.value, this.password.value)
+      .pipe(
+        catchError((err) => {
+          this.snackBar.open(err.message, 'Close', {
+            duration: 1000,
+          });
+          return of(null);
+        })
+      )
+      .subscribe(() => {
+        console.log('here');
+        this.isLoading = false;
+        this.router.navigate(['/phones']);
+      });
   }
   onSubmit() {
-    console.log('submit form');
-    // if (this.loginForm.valid) {
-    //   this.login();
-    // }
-  }
-
-  ngOnInit(): void {
-    console.log(this.repeatPassword);
+    if (this.loginForm.valid) {
+      this.register();
+    }
   }
 }

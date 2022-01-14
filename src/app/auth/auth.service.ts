@@ -29,6 +29,21 @@ export class AuthService {
     return subject.pipe(shareReplay());
   }
 
+  public register(
+    username: string,
+    password: string
+  ): Observable<AuthenticatedUser> {
+    const subject = new ReplaySubject<AuthenticatedUser>();
+
+    this.apiService.register(username, password).subscribe(subject);
+
+    subject.subscribe((authenticatedUser) => {
+      this.setToken(authenticatedUser.token, authenticatedUser.expiresAt);
+    });
+
+    return subject.pipe(shareReplay());
+  }
+
   public getToken(): string {
     return this.storage.getToken();
   }
