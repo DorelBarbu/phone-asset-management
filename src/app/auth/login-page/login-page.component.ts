@@ -63,6 +63,10 @@ export class LoginPageComponent {
       });
   }
 
+  onRegisterClick() {
+    this.router.navigate(['/register']);
+  }
+
   onSubmit() {
     console.log('submit form');
     if (this.loginForm.valid) {

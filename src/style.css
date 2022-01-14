@@ -29,3 +29,8 @@
 .full-width {
   width: 100%;
 }
+
+.generic-card {
+  max-width: 25vw;
+  margin: auto;
+}

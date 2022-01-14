@@ -10,9 +10,10 @@ import { JwtStorage } from './types/JwtStorage';
 import { JwtStorageService } from './jwt-storage.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 @NgModule({
-  declarations: [LoginPageComponent],
+  declarations: [LoginPageComponent, RegisterUserComponent],
   imports: [
     CommonModule,
     MatInputModule,

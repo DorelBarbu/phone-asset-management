@@ -1,6 +1,6 @@
 <mat-card class="generic-card">
   <mat-card-title class="text-align-center card-title mb-small"
-    >Login</mat-card-title
+    >Register</mat-card-title
   >
 
   <div class="vertical-container mb-small">
@@ -12,6 +12,7 @@
           getEmailErrorMessage()
         }}</mat-error>
       </mat-form-field>
+
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Password</mat-label>
         <input
@@ -25,6 +26,21 @@
           getPasswordErrorMessage()
         }}</mat-error>
       </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Repeat password</mat-label>
+        <input
+          matInput
+          [formControl]="repeatPassword"
+          required
+          type="password"
+          [readonly]="isLoading"
+        />
+        <mat-error *ngIf="repeatPassword.invalid">{{
+          getRepeatPasswordErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+
       <div class="vertical-container align-center">
         <mat-spinner diameter="50" *ngIf="isLoading"></mat-spinner>
         <button
@@ -34,16 +50,7 @@
           type="submit"
           *ngIf="!isLoading"
         >
-          Login
-        </button>
-        <button
-          class="full-width"
-          mat-raised-button
-          (click)="onRegisterClick()"
-          color="accent"
-          *ngIf="!isLoading"
-        >
-          Create an account
+          Register account
         </button>
       </div>
     </form>
