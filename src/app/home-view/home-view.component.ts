@@ -8,7 +8,8 @@ export const CREATE_PHONE_PATH = '/create'
 
 const routeConfiguration: RouteConfiguration = {
   [PHONES_PATH]: 'All Phones',
-  [CREATE_PHONE_PATH]: 'Add new phone'
+  [CREATE_PHONE_PATH]: 'Add new phone',
+  'signout': 'Log out',
 }
 
 @Component({

@@ -25,15 +25,25 @@
           getPasswordErrorMessage()
         }}</mat-error>
       </mat-form-field>
-      <div class="container">
+      <div class="vertical-container align-center">
         <mat-spinner diameter="50" *ngIf="isLoading"></mat-spinner>
         <button
+          class="mb-small full-width"
           mat-raised-button
           color="primary"
           type="submit"
           *ngIf="!isLoading"
         >
           Login
+        </button>
+        <button
+          class="full-width"
+          mat-raised-button
+          color="accent"
+          type="submit"
+          *ngIf="!isLoading"
+        >
+          Create an account
         </button>
       </div>
     </form>

@@ -26,6 +26,11 @@ const routes: Routes = [
         path: 'create',
         component: CreatePhoneComponent,
       },
+      {
+        path: 'signout',
+        pathMatch: 'full',
+        redirectTo: '/login',
+      },
     ],
   },
   {
@@ -35,7 +40,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: true,
+    }),
+  ],
   exports: [RouterModule],
   providers: [IsAuthenticated],
 })
