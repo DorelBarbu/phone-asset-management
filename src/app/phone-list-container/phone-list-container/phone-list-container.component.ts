@@ -3,7 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { EditPhoneDialogComponent } from 'src/app/edit-phone-dialog/edit-phone-dialog.component';
+import { EditPhoneDialogComponent } from 'src/app/edit-phone/edit-phone-dialog/edit-phone-dialog.component';
 import { PhoneService } from 'src/app/services/phone.service';
 import Phone from '../../../types/phone.type';
 @Component({

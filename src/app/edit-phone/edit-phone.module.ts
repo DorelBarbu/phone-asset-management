@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditPhoneDialogComponent } from '../edit-phone-dialog/edit-phone-dialog.component';
-import { EditPhoneFormComponent } from '../edit-phone-form/edit-phone-form.component';
+import { EditPhoneDialogComponent } from './edit-phone-dialog/edit-phone-dialog.component';
+import { EditPhoneFormComponent } from './edit-phone-form/edit-phone-form.component';
 
 
 import { MatInputModule } from '@angular/material/input';
