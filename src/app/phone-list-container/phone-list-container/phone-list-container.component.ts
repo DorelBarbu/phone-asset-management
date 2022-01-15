@@ -32,9 +32,8 @@ export class PhoneListContainerComponent {
       tap((users) => {
         console.log('users arrived', users);
       }),
-      catchError((err) => {
-        console.error(err.error.message);
-        this.errorMessage$.next(err.error.message);
+      catchError((errorObject) => {
+        this.errorMessage$.next(errorObject.error.error.message);
         return of([]);
       })
     );
@@ -42,7 +41,6 @@ export class PhoneListContainerComponent {
 
   private savePhone(phone: Phone) {
     this.editPhoneDialogRef.componentInstance.isLoading = true;
-    console.log('data arrived in parent component ', phone);
 
     const updatePhoneResult$ = this.phoneService.updatePhone(
       phone.id.toString(),
