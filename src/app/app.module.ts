@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhoneListContainerModule } from './phone-list-container/phone-list-container.module';
 import { AboutComponent } from './about/about.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { EditPhoneModule } from './edit-phone/edit-phone.module';
 
 // Material components modules
 import { MatCardModule } from '@angular/material/card';
@@ -38,7 +37,6 @@ import { PhoneModule } from './phone/phone.module';
     MatProgressSpinnerModule,
     MatInputModule,
     PhoneListContainerModule,
-    EditPhoneModule,
     AuthModule,
     PhoneModule,
     ReactiveFormsModule,
