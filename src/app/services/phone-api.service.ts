@@ -16,14 +16,8 @@ export class PhoneApiService {
     return this.http.get<Phone[]>(`${SERVER}/phones`);
   }
 
-  public updatePhone(phone: Phone): Observable<Phone> {
-    return of(phone).pipe(
-      delay(600),
-      switchMap(() => {
-        // return throwError(new Error('Error loading phones'));
-        return of(phone);
-      })
-    );
+  public updatePhone(id: string, phone: Partial<Phone>): Observable<Phone> {
+    return this.http.patch<Phone>(`${SERVER}/phones/${id}`, phone);
   }
 
   public createPhone(phone: Phone): Observable<Phone> {

@@ -44,7 +44,10 @@ export class PhoneListContainerComponent {
     this.editPhoneDialogRef.componentInstance.isLoading = true;
     console.log('data arrived in parent component ', phone);
 
-    const updatePhoneResult$ = this.phoneService.updatePhone(phone);
+    const updatePhoneResult$ = this.phoneService.updatePhone(
+      phone.id.toString(),
+      phone
+    );
     updatePhoneResult$.subscribe(
       () => {
         this.closeDialog();

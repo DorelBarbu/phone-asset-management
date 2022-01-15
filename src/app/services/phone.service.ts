@@ -15,8 +15,8 @@ export class PhoneService {
     return this.phoneApi.getPhones();
   }
 
-  updatePhone(phone: Phone): Observable<Phone> {
-    return this.phoneApi.updatePhone(phone);
+  updatePhone(id: string, phone: Partial<Phone>): Observable<Phone> {
+    return this.phoneApi.updatePhone(id, phone);
   }
 
   createPhone(phone: Phone): Observable<Phone> {
