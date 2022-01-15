@@ -36,7 +36,6 @@ import { PhoneModule } from './phone/phone.module';
     MatListModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    PhoneListContainerModule,
     AuthModule,
     PhoneModule,
     ReactiveFormsModule,
