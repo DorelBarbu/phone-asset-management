@@ -29,8 +29,8 @@ export class PhoneListContainerComponent {
     this.errorMessage$.next('');
 
     this.phones$ = this.phoneService.getPhones().pipe(
-      tap((users) => {
-        console.log('users arrived', users);
+      tap((phones) => {
+        console.log('phones arrived', phones);
       }),
       catchError((errorObject) => {
         this.errorMessage$.next(errorObject.error.error.message);
