@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { PhoneService } from 'src/app/services/phone.service';
+import { PhoneService } from 'src/app/phone/services/phone.service';
 import Phone from 'src/types/phone.type';
 
 @Component({
