@@ -19,8 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
-import { CreatePhoneModule } from './create-phone/create-phone.module';
-
+import { CreatePhoneModule } from './phone/create-phone/create-phone.module';
+import { PhoneModule } from './phone/phone.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,8 +39,8 @@ import { CreatePhoneModule } from './create-phone/create-phone.module';
     MatInputModule,
     PhoneListContainerModule,
     EditPhoneModule,
-    CreatePhoneModule,
     AuthModule,
+    PhoneModule,
     ReactiveFormsModule,
     MatFormFieldModule,
   ],

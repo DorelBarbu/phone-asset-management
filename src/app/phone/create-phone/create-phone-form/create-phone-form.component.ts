@@ -4,13 +4,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { PhoneService } from 'src/app/services/phone.service';
 import Phone from 'src/types/phone.type';
-import { PhoneService } from '../../services/phone.service';
 
 @Component({
   selector: 'app-create-phone-form',
   templateUrl: './create-phone-form.component.html',
-  styleUrls: ['./create-phone-form.component.css', './../../../style.css'],
+  styleUrls: ['./create-phone-form.component.css', './../../../../style.css'],
 })
 export class CreatePhoneFormComponent implements OnInit {
   public isLoading: boolean = false;
