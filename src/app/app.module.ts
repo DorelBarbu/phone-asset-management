@@ -4,9 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PhoneListContainerModule } from './phone/view-phone/phone-list-container/phone-list-container.module';
-import { AboutComponent } from './about/about.component';
-import { NavigationBarComponent } from './common/navigation-bar/navigation-bar.component';
 
 // Material components modules
 import { MatCardModule } from '@angular/material/card';
@@ -18,14 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
-import { CreatePhoneModule } from './phone/create-phone/create-phone.module';
 import { PhoneModule } from './phone/phone.module';
 import { NavigationBarModule } from './common/navigation-bar/navigation-bar.module';
-import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
     HomeViewComponent,
   ],
   imports: [
