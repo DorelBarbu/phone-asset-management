@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthModule } from './auth/auth.module';
-import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
+import { AuthModule } from './features/auth/auth.module';
+import { AuthInterceptor } from './features/auth/interceptors/auth.interceptor';
 import { PhoneModule } from './phone/phone.module';
 import { HomeViewModule } from './views/home/home-view.module';
 @NgModule({

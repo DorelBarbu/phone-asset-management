@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css', '../../../style.css'],
+  styleUrls: ['./login-page.component.css', '../../../../style.css'],
 })
 export class LoginPageComponent {
   email = new FormControl('', [

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import IsAuthenticated from './auth/is-authenticated.guard';
-import { LoginPageComponent } from './auth/login-page/login-page.component';
-import { RegisterUserComponent } from './auth/register-user/register-user.component';
+import IsAuthenticated from './features/auth/is-authenticated.guard';
+import { LoginPageComponent } from './features/auth/login-page/login-page.component';
+import { RegisterUserComponent } from './features/auth/register-user/register-user.component';
 import { HomeViewComponent } from './views/home/home-view.component';
 import { PhoneListContainerComponent } from './phone/view-phone/phone-list-container/phone-list-container/phone-list-container.component';
 import { CreatePhoneFormComponent } from './phone/create-phone/create-phone-form/create-phone-form.component';

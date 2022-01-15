@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, switchMap } from 'rxjs/operators';
 import { AuthenticatedUser } from 'src/types/user.type';
-import { SERVER } from '../constants';
+import { SERVER } from '../../constants';
 @Injectable({
   providedIn: 'root',
 })

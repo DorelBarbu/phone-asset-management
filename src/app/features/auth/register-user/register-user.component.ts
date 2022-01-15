@@ -9,8 +9,6 @@ import {
 } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { of, Subject } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
 
 function passwordNotMatch(): ValidatorFn {
@@ -29,7 +27,7 @@ function passwordNotMatch(): ValidatorFn {
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css', '../../../style.css'],
+  styleUrls: ['./register-user.component.css', '../../../../style.css'],
 })
 export class RegisterUserComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
