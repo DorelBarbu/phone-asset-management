@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { of, Subject } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
 
 @Component({
