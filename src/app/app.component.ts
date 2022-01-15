@@ -14,7 +14,7 @@ const routeConfiguration: RouteConfiguration = {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css', '../style.css'],
 })
 export class AppComponent {
   phones: Phone[] = phones;
