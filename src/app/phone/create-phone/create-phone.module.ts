@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FileUploadModule } from 'src/app/file-upload/file-upload.module';
+import { ErrorMessageModule } from 'src/app/common/error-message/error-message.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FileUploadModule } from 'src/app/file-upload/file-upload.module';
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    ErrorMessageModule
   ],
   exports: [
     CreatePhoneFormComponent

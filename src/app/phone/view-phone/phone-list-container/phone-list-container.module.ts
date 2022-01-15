@@ -5,22 +5,22 @@ import { PhoneListComponent } from '../phone-list/phone-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ErrorMessageComponent } from '../../../error-message/error-message.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ErrorMessageModule } from 'src/app/common/error-message/error-message.module';
 
 
 @NgModule({
   declarations: [
     PhoneListContainerComponent,
     PhoneListComponent,
-    ErrorMessageComponent,
   ],
   imports: [
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ErrorMessageModule,
   ],
   exports: [
     PhoneListContainerComponent

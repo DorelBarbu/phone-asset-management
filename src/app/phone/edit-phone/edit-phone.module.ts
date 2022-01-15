@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ErrorMessageModule } from 'src/app/common/error-message/error-message.module';
 
 
 
@@ -29,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
     MatCardModule,
     ReactiveFormsModule,
+    ErrorMessageModule,
   ]
 })
 export class EditPhoneModule { }
