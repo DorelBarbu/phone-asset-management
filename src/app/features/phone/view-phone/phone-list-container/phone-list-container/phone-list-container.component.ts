@@ -3,9 +3,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { EditPhoneDialogComponent } from 'src/app/phone/edit-phone/edit-phone-dialog/edit-phone-dialog.component';
-import { PhoneService } from 'src/app/phone/services/phone.service';
-import Phone from '../../../../../types/phone.type';
+import { EditPhoneDialogComponent } from 'src/app/features/phone/edit-phone/edit-phone-dialog/edit-phone-dialog.component';
+import { PhoneService } from 'src/app/features/phone/services/phone.service';
+import Phone from '../../../../../../types/phone.type';
 @Component({
   selector: 'app-phone-list-container',
   templateUrl: './phone-list-container.component.html',

@@ -4,8 +4,8 @@ import IsAuthenticated from './features/auth/is-authenticated.guard';
 import { LoginPageComponent } from './features/auth/login-page/login-page.component';
 import { RegisterUserComponent } from './features/auth/register-user/register-user.component';
 import { HomeViewComponent } from './views/home/home-view.component';
-import { PhoneListContainerComponent } from './phone/view-phone/phone-list-container/phone-list-container/phone-list-container.component';
-import { CreatePhoneFormComponent } from './phone/create-phone/create-phone-form/create-phone-form.component';
+import { PhoneListContainerComponent } from './features/phone/view-phone/phone-list-container/phone-list-container/phone-list-container.component';
+import { CreatePhoneFormComponent } from './features/phone/create-phone/create-phone-form/create-phone-form.component';
 
 export const ABOUT_PATH = 'about';
 export const PHONES_PATH = 'phones';
