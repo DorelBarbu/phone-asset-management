@@ -5,14 +5,14 @@ import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import Phone from 'src/types/phone.type';
-import { PhoneService } from '../services/phone.service';
+import { PhoneService } from '../../services/phone.service';
 
 @Component({
-  selector: 'app-create-phone',
-  templateUrl: './create-phone.component.html',
-  styleUrls: ['./create-phone.component.css', './../../style.css'],
+  selector: 'app-create-phone-form',
+  templateUrl: './create-phone-form.component.html',
+  styleUrls: ['./create-phone-form.component.css', './../../../style.css'],
 })
-export class CreatePhoneComponent implements OnInit {
+export class CreatePhoneFormComponent implements OnInit {
   public isLoading: boolean = false;
 
   type = new FormControl('', [Validators.required]);

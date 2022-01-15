@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import IsAuthenticated from './auth/is-authenticated.guard';
 import { LoginPageComponent } from './auth/login-page/login-page.component';
 import { RegisterUserComponent } from './auth/register-user/register-user.component';
-import { CreatePhoneComponent } from './create-phone/create-phone.component';
+import { CreatePhoneFormComponent } from './create-phone/create-phone-form/create-phone-form.component';
 import { HomeViewComponent } from './home-view/home-view.component';
 import { PhoneListContainerComponent } from './phone-list-container/phone-list-container/phone-list-container.component';
 
@@ -23,7 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreatePhoneComponent,
+        component: CreatePhoneFormComponent,
       },
       {
         path: 'signout',
