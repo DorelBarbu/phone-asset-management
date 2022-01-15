@@ -1,18 +1,18 @@
 <!-- <p>phone-list works!</p> -->
 <h1 style="text-align: center">Phones</h1>
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 table-container">
   <table>
     <thead>
-      <tr style="text-align: left;">
-        <th *ngFor="let column of columns">{{column}}</th>
+      <tr style="text-align: left">
+        <th *ngFor="let column of columns">{{ column }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let phone of phones" (click)="onClickRow(phone)">
-        <td>{{phone.id}}</td>
-        <td>{{phone.type}}</td>
-        <td>{{phone.serial}}</td>
-        <td>{{phone.color}}</td>
+      <tr *ngFor="let phone of phones" (click)="onClickRow(phone)" class="entry-row">
+        <td>{{ phone.id }}</td>
+        <td>{{ phone.type }}</td>
+        <td>{{ phone.serial }}</td>
+        <td>{{ phone.color }}</td>
       </tr>
     </tbody>
   </table>
