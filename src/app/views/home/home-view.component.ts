@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteConfiguration } from '../common/navigation-bar/navigation-bar.component';
+import { RouteConfiguration } from '../../common/navigation-bar/navigation-bar.component';
 
 export const ABOUT_PATH = 'about';
 export const PHONES_PATH = 'phones';

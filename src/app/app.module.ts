@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
 import { PhoneModule } from './phone/phone.module';
-import { HomeViewModule } from './home/home-view.module';
+import { HomeViewModule } from './views/home/home-view.module';
 @NgModule({
   declarations: [
     AppComponent,
