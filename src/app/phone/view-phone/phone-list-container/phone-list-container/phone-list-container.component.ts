@@ -33,7 +33,7 @@ export class PhoneListContainerComponent {
         console.log('phones arrived', phones);
       }),
       catchError((errorObject) => {
-        this.errorMessage$.next(errorObject.error.error.message);
+        this.errorMessage$.next(errorObject.error.message);
         return of([]);
       })
     );

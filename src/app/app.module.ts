@@ -17,10 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
 import { PhoneModule } from './phone/phone.module';
 import { NavigationBarModule } from './common/navigation-bar/navigation-bar.module';
+import { HomeViewModule } from './home-view/home-view.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { NavigationBarModule } from './common/navigation-bar/navigation-bar.modu
     PhoneModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    NavigationBarModule,
+    HomeViewModule
   ],
   bootstrap: [AppComponent],
   providers: [
