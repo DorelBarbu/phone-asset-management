@@ -5,9 +5,9 @@ import { PhoneListComponent } from '../phone-list/phone-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { PhoneService } from '../services/phone.service';
+import { PhoneService } from '../../../services/phone.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ErrorMessageComponent } from '../error-message/error-message.component';
+import { ErrorMessageComponent } from '../../../error-message/error-message.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 

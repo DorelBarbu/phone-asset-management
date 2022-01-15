@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PhoneListContainerModule } from './phone-list-container/phone-list-container.module';
+import { PhoneListContainerModule } from './phone/view-phone/phone-list-container/phone-list-container.module';
 import { AboutComponent } from './about/about.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 

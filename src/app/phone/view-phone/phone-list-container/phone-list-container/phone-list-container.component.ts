@@ -5,7 +5,7 @@ import { Observable, of, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { EditPhoneDialogComponent } from 'src/app/phone/edit-phone/edit-phone-dialog/edit-phone-dialog.component';
 import { PhoneService } from 'src/app/services/phone.service';
-import Phone from '../../../types/phone.type';
+import Phone from '../../../../../types/phone.type';
 @Component({
   selector: 'app-phone-list-container',
   templateUrl: './phone-list-container.component.html',
