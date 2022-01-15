@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FileUploadModule } from 'src/app/file-upload/file-upload.module';
+import { FileUploadModule } from 'src/app/common/file-upload/file-upload.module';
 import { ErrorMessageModule } from 'src/app/common/error-message/error-message.module';
 
 
