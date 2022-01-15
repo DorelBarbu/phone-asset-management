@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
+import { CreatePhoneModule } from './create-phone/create-phone.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
     MatInputModule,
     PhoneListContainerModule,
     EditPhoneModule,
+    CreatePhoneModule,
     AuthModule,
     ReactiveFormsModule,
     MatFormFieldModule,

@@ -11,8 +11,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FileUploadComponent } from '../file-upload/file-upload.component';
-import { CreatePhoneModule } from '../create-phone/create-phone.module';
 
 
 

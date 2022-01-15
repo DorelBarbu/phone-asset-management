@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FileUploadModule } from '../file-upload/file-upload.module';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -19,7 +21,13 @@ import { FileUploadModule } from '../file-upload/file-upload.module';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    FileUploadModule
+    FileUploadModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
+  exports: [
+    CreatePhoneFormComponent
   ]
 })
 export class CreatePhoneModule { }
