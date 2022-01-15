@@ -17,7 +17,13 @@
       <input matInput required [readonly]="isLoading" [formControl]="color" />
       <mat-error *ngIf="false">test error</mat-error>
     </mat-form-field>
-    
+
+    <div class="mb-small">
+      <app-file-upload
+        whitelist="application/json"
+        (onReadFile)="onReadFile($event)"
+      ></app-file-upload>
+    </div>
     <div class="container">
       <mat-spinner diameter="50" *ngIf="isLoading"></mat-spinner>
       <button
@@ -30,8 +36,4 @@
       </button>
     </div>
   </form>
-  <app-file-upload
-    whitelist="application/json"
-    (onReadFile)="onReadFile($event)"
-  ></app-file-upload>
 </mat-card>

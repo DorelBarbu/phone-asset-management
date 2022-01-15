@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreatePhoneFormComponent } from './create-phone-form/create-phone-form.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FileUploadModule } from '../file-upload/file-upload.module';
 import { MatInputModule } from '@angular/material/input';
@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
   ],
   exports: [
     CreatePhoneFormComponent
