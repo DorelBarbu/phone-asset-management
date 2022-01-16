@@ -7,6 +7,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ErrorMessageModule } from 'src/app/common/error-message/error-message.module';
+import { ActionsMenuModule } from '../../actions-menu/actions-menu.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ErrorMessageModule } from 'src/app/common/error-message/error-message.m
     MatProgressSpinnerModule,
     MatSnackBarModule,
     ErrorMessageModule,
+    ActionsMenuModule
   ],
   exports: [
     PhoneListContainerComponent

@@ -23,4 +23,10 @@ export class PhoneApiService {
   public createPhone(phone: Phone): Observable<Phone> {
     return this.http.post<Phone>(`${SERVER}/phones`, phone);
   }
+
+  // for the moment we use any here, since we do not want to do something specific with the
+  // returned result
+  public deletePhone(id: string) {
+    return this.http.delete<any>(`${SERVER}/phones/${id}`);
+  }
 }

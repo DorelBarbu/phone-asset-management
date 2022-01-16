@@ -5,14 +5,22 @@
     <thead>
       <tr style="text-align: left">
         <th *ngFor="let column of columns">{{ column }}</th>
+        <th>action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let phone of phones" (click)="onClickRow(phone)" class="entry-row">
+      <tr *ngFor="let phone of phones" class="entry-row">
         <td>{{ phone.id }}</td>
         <td>{{ phone.type }}</td>
         <td>{{ phone.serial }}</td>
         <td>{{ phone.color }}</td>
+        <td>
+          <app-actions-menu
+            [phone]="phone"
+            (onEditPhone)="onEditAction($event)"
+            (onDeletePhone)="onDeleteAction($event)"
+          ></app-actions-menu>
+        </td>
       </tr>
     </tbody>
   </table>

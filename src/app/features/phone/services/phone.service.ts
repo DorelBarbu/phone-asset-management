@@ -22,4 +22,8 @@ export class PhoneService {
   createPhone(phone: Phone): Observable<Phone> {
     return this.phoneApi.createPhone(phone);
   }
+
+  deletePhone(id: string) {
+    return this.phoneApi.deletePhone(id);
+  }
 }

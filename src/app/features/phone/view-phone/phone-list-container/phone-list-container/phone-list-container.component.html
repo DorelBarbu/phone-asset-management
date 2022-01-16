@@ -1,7 +1,8 @@
 <div *ngIf="phones$ | async as phones; else loading">
   <app-phone-list
     *ngIf="phones.length > 0"
-    (rowClickedEvent)="handleRowClickEvent($event)"
+    (onEditPhone)="handleEditAction($event)"
+    (onDeletePhone)="handleDeleteAction($event)"
     [phones]="phones"
   ></app-phone-list>
 </div>

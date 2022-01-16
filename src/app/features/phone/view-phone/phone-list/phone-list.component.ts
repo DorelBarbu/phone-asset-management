@@ -11,10 +11,15 @@ export class PhoneListComponent {
 
   @Input() phones: Phone[] | null = [];
 
-  @Output() rowClickedEvent = new EventEmitter<Phone>();
+  @Output() onEditPhone = new EventEmitter<Phone>();
 
-  onClickRow(phone: Phone) {
-    // console.log('row clicked', phone);
-    this.rowClickedEvent.emit(phone);
+  @Output() onDeletePhone = new EventEmitter<Phone>();
+
+  onEditAction(phone: Phone) {
+    this.onEditPhone.emit(phone);
+  }
+
+  onDeleteAction(phone: Phone) {
+    this.onDeletePhone.emit(phone);
   }
 }

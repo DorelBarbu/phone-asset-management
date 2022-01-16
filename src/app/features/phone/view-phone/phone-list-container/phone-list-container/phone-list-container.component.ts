@@ -46,14 +46,15 @@ export class PhoneListContainerComponent {
       phone.id.toString(),
       phone
     );
+
     updatePhoneResult$.subscribe(
       () => {
         this.closeDialog();
         this.getPhones();
       },
-      (err) => {
+      (errorObject) => {
         this.editPhoneDialogRef.componentInstance.isLoading = false;
-        this.snackBar.open('Error updating phone', 'Close', {
+        this.snackBar.open(errorObject.error.message, 'Close', {
           duration: 1000,
         });
       }
@@ -63,10 +64,6 @@ export class PhoneListContainerComponent {
   openDialog(phone: Phone): void {
     this.editPhoneDialogRef = this.dialog.open(EditPhoneDialogComponent, {
       data: { ...phone },
-    });
-
-    this.editPhoneDialogRef.afterClosed().subscribe((result) => {
-      console.log('This dialog was closed');
     });
 
     this.editPhoneDialogRef.componentInstance.onSaveEventEmitter.subscribe(
@@ -79,7 +76,24 @@ export class PhoneListContainerComponent {
     this.editPhoneDialogRef.close();
   }
 
-  handleRowClickEvent(phone: Phone) {
+  handleEditAction(phone: Phone) {
     this.openDialog(phone);
+  }
+
+  handleDeleteAction(phone: Phone) {
+    const deletePhoneResult$ = this.phoneService.deletePhone(
+      phone.id.toString()
+    );
+
+    deletePhoneResult$.subscribe(
+      () => {
+        this.getPhones();
+      },
+      (errorObject) => {
+        this.snackBar.open(errorObject.error.message, 'Close', {
+          duration: 1000,
+        });
+      }
+    );
   }
 }
