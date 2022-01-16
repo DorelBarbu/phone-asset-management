@@ -14,6 +14,12 @@
         <td>{{ phone.type }}</td>
         <td>{{ phone.serial }}</td>
         <td>{{ phone.color }}</td>
+        <td *ngIf="phone.metadata; else noMetadata">
+          <app-file-download [fileBase64]="phone.metadata"></app-file-download>
+        </td>
+        <ng-template #noMetadata>
+          <td>No metadata available</td>
+        </ng-template>
         <td>
           <app-actions-menu
             [phone]="phone"
