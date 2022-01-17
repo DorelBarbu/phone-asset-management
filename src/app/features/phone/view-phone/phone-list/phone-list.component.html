@@ -1,15 +1,19 @@
 <!-- <p>phone-list works!</p> -->
-<h1 style="text-align: center">Phones</h1>
+<h1 style="text-align: center; font-weight: bold">Phones</h1>
 <div class="mat-elevation-z8 table-container">
   <table>
     <thead>
-      <tr style="text-align: left">
+      <tr style="text-align: center">
         <th *ngFor="let column of columns">{{ column }}</th>
-        <th>action</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let phone of phones" class="entry-row">
+      <tr
+        *ngFor="let phone of phones"
+        class="entry-row"
+        style="text-align: center"
+      >
         <td>{{ phone.id }}</td>
         <td>{{ phone.type }}</td>
         <td>{{ phone.serial }}</td>

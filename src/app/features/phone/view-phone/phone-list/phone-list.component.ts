@@ -7,7 +7,7 @@ import Phone from '../../../../../types/phone.type';
   styleUrls: ['./phone-list.component.css'],
 })
 export class PhoneListComponent {
-  columns: string[] = ['id', 'type', 'serial', 'color', 'metadata'];
+  columns: string[] = ['Id', 'Type', 'Serial', 'Color', 'Metadata'];
 
   @Input() phones: Phone[] | null = [];
 
